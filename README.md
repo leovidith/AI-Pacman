@@ -1,43 +1,80 @@
 # Pac-Man Reinforcement Learning
 
-This project demonstrates a reinforcement learning (RL) agent playing the Pac-Man game using a Deep Q-Network (DQN). The agent is trained to maximize its score in the game environment `MsPacmanDeterministic-v0` provided by OpenAI's Gym.
+## Project Objective:
+To develop and train a Deep Q-Network (DQN)-based reinforcement learning agent capable of playing the Pac-Man game, maximizing scores through iterative sprints.
 
-## Features
+## Why Use Reinforcement Learning for Pac-Man?
+Reinforcement Learning (RL) is ideal for game-based environments due to its focus on:
+- Maximizing cumulative rewards through trial-and-error interactions.
+- Handling dynamic, multi-step decision-making scenarios like Pac-Man.
+- Adapting strategies for complex environments with varying challenges.
 
-- **Deep Q-Network (DQN)**: The agent uses a neural network to approximate the Q-value function.
-- **Experience Replay**: Stores and samples past experiences to improve learning stability.
-- **Epsilon-Greedy Policy**: Balances exploration and exploitation during training.
-- **Video Recording**: Captures and displays the agent’s gameplay.
 
-## Requirements
+## Agile Sprint Overview:
 
-- Python 3.x
-- PyTorch
-- Gymnasium
-- Additional libraries
+#### **Sprint 1: Environment Setup and Requirements**
+- Install required libraries and dependencies:
+  - Gymnasium (for the `MsPacmanDeterministic-v0` environment).
+  - PyTorch (for building the DQN model).
+- Validate the gaming environment.
+- Deliverable: Configured and validated game environment.
 
-You can install the required packages using the following commands:
+#### **Sprint 2: Model Architecture Design**
+- Design the DQN with layers suitable for processing game state inputs.
+- Implement Experience Replay for efficient training.
+- Deliverable: Initial DQN model ready for training.
 
-```bash
-pip install gymnasium
-pip install "gymnasium[atari, accept-rom-license]"
-apt-get install -y swig
-pip install gymnasium[box2d]
-```
-Usage
-Run the training script:
+#### **Sprint 3: Training Pipeline Development**
+- Implement epsilon-greedy exploration.
+- Train the agent over 2000 episodes and log progress:
+  - Average scores printed to console.
+  - Checkpoint the model when achieving target performance (average score >= 500).
+- Deliverable: Trained DQN model and training logs.
 
-Execute the following command to start training the DQN agent:
+#### **Sprint 4: Gameplay Recording and Evaluation**
+- Implement video recording to capture the agent’s gameplay.
+- Validate the agent’s performance in solving the environment.
+- Deliverable: Gameplay video (`video.mp4`) and performance evaluation report.
+
+#### **Sprint 5: Deployment and Documentation**
+- Deploy the trained model and gameplay viewer on the platform.
+- Provide user-friendly documentation:
+  - How to train the agent.
+  - How to view and analyze gameplay.
+- Deliverable: Deployed solution with complete user documentation.
+
+
+
+### Features:
+- **Deep Q-Network (DQN)**:
+  - Neural network approximation for Q-value function.
+  - Decision-making based on maximizing rewards.
+- **Experience Replay**:
+  - Stores and reuses past experiences to enhance learning.
+- **Epsilon-Greedy Policy**:
+  - Balances exploration of new actions with exploitation of learned strategies.
+- **Gameplay Video Recording**:
+  - Captures and displays the agent’s gameplay for analysis and visualization.
+
+
+
+### Example Usage:
+
+#### Training the Agent:
+Run the following command to start training:
 
 ```bash
 python train.py
 ```
 
-Training Details:
+#### Gameplay Recording:
+After training, the gameplay video will be saved and displayed:
 
-The agent will be trained over 2000 episodes.
-The training progress, including average scores, will be printed to the console.
-The agent will save the trained model to checkpoint.pth once it solves the environment (average score >= 500.0).
-View the Agent’s Gameplay:
+```bash
+video.mp4
+```
 
-After training, the agent’s gameplay video will be saved as video.mp4 and displayed in the notebook.
+---
+
+This Agile implementation provides a structured approach to delivering a high-performing reinforcement learning agent, ensuring technical robustness and user engagement.
+
